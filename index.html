@@ -9,7 +9,27 @@
     <div>On a quest towards better health?</div>
     <div>Data has never been healthier</div>
     <input  type="text" required placeholder="Enter Name..." name="login"><br>
-    <input type="file" accept="image/*" capture="camera">
+    <form id="form1" runat="server">
+      <input type="file" id="imgInp" accept="image/*" capture="camera">
+      <img id="blah" src="#" alt="Your Image" />
   </section>
+
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#imgInp").change(function(){
+      readURL(this);
+    });
+  </script>
 </body>
 </html>
