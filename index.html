@@ -1,35 +1,26 @@
 <!doctype html>
 <html>
 <head>
-  <link href="page-1.css" rel="stylesheet" type="text/css">
+  <link href="./page-1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <section>
+  <section class="container">
     <h1><span id="beginning">digest quest</span><span id="ending">.io</span></h1>
     <div>On a quest towards better health?</div>
     <div>Data has never been healthier</div>
-    <input  type="text" required placeholder="Enter Name..." name="login"><br>
-    <form id="form1" runat="server">
-      <input type="file" id="imgInp" accept="image/*" capture="camera">
-      <img id="blah" src="#" alt="Your Image" />
   </section>
 
-  <script>
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
+  <section class="object login w420 text--center object--center">
+      <form action="./process.php" method="post">
+        <div class="input-block_container input-block_container--small-label">
+          <div class="input-block">
+            <div class="input-block_content">
+              <input type="text" spellcheck="false" autocorrect="off" autocapitalize="off" value="" name="text" id="name" placeholder="Enter Name..." required>
+            </div>
+          </div>
+        </div>
+        <button class="object--center button--green" href="./page-2.html">Submit</button>
+      </form>
 
-        reader.onload = function(e) {
-          $('#blah').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-
-    $("#imgInp").change(function(){
-      readURL(this);
-    });
-  </script>
 </body>
 </html>
