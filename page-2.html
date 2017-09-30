@@ -8,10 +8,18 @@
     <form id="form1" runat="server">
       <input type="file" id="imgInp" accept="image/*" capture="camera">
       <img id="blah" src="#" alt="Your Image" />
-
     </form>
+    <div id="display">
+
+    </div>
+
     <script>
-      Tesseract.recognize(blah).then(function(result){console.log(result)})
+      Tesseract.recognize(blah).then(function(result){
+        var elem = document.createElement("p")
+        var text = document.createTextNode(result);
+        elem.appendChild(text);
+        document.getElementById("display").appendChild(node);
+      })
     </script>
   </body>
 </html>
